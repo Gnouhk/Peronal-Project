@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &166336397059166557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 166336397059166559}
+  - component: {fileID: 166336397059166556}
+  m_Layer: 0
+  m_Name: ScanManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &166336397059166559
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166336397059166557}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &166336397059166556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166336397059166557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a443bba099d0946a2d4a40b668fe95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlesTexture: {fileID: 2800000, guid: bcb86c43b0004ff47a0d9c20e757c94d, type: 3}
+  particlesSize: {x: 0.06, y: 0.07}
+  scanUseNormal: 0
+  selectedPalette: 1
+  laserMask:
+    serializedVersion: 2
+    m_Bits: 18434
+  particlesConfig:
+    colorPalette:
+    - typeName: Default
+      colorType:
+      - tagName: Global
+        color: {r: 3.3202713, g: 0.6723853, b: 0.07830827, a: 0}
+        range: 0
+      - tagName: Glass
+        color: {r: 0.48279637, g: 3.1233306, b: 4.094114, a: 0}
+        range: 0
+      - tagName: Grass
+        color: {r: 0.47409475, g: 3.4716983, b: 0.40939832, a: 0}
+        range: 0
+      - tagName: Red
+        color: {r: 2.264151, g: 0.032039814, b: 0.032039814, a: 0}
+        range: 0
+      - tagName: Metal
+        color: {r: 0.48479187, g: 0.47793162, b: 0.47793162, a: 0}
+        range: 0
+    - typeName: Vibrant
+      colorType:
+      - tagName: Global
+        color: {r: 3.1987982, g: 2.0368972, b: 0, a: 0}
+        range: 0
+      - tagName: Glass
+        color: {r: 0, g: 4.279952, b: 0.88955325, a: 0}
+        range: 0
+      - tagName: Grass
+        color: {r: 0.34769103, g: 2.0988636, b: 0, a: 0}
+        range: 0
+      - tagName: Red
+        color: {r: 3.0228195, g: 0, b: 0.029294865, a: 0}
+        range: 0
+      - tagName: Metal
+        color: {r: 4.0357018, g: 4.0357018, b: 4.0357018, a: 0}
+        range: 0
+    - typeName: Sweet
+      colorType:
+      - tagName: Global
+        color: {r: 4.292058, g: 0.10122777, b: 1.1616489, a: 0}
+        range: 0
+      - tagName: Glass
+        color: {r: 0.3794457, g: 2.0626276, b: 1.3213958, a: 0}
+        range: 0
+      - tagName: Grass
+        color: {r: 0.65607214, g: 2.0988634, b: 0.24750742, a: 0}
+        range: 0
+      - tagName: Red
+        color: {r: 1.8250986, g: 0.24855512, b: 0, a: 0}
+        range: 0
+      - tagName: Metal
+        color: {r: 2.0356603, g: 2.0356603, b: 1.5075408, a: 0}
+        range: 0
+    - typeName: Pastel
+      colorType:
+      - tagName: Global
+        color: {r: 0.8631574, g: 0.47353154, b: 0.27467737, a: 1}
+        range: 0
+      - tagName: Glass
+        color: {r: 0.3967553, g: 0.7454045, b: 0.822786, a: 1}
+        range: 0
+      - tagName: Grass
+        color: {r: 0.43965724, g: 0.70837605, b: 0.597202, a: 1}
+        range: 0
+      - tagName: Red
+        color: {r: 0.8879232, g: 0.22322798, b: 0.2831488, a: 1}
+        range: 0
+      - tagName: Metal
+        color: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
+        range: 0
+    - typeName: Empty
+      colorType:
+      - tagName: Global
+        color: {r: 3.2148354, g: 0.5722744, b: 0, a: 0}
+        range: 0
+      - tagName: Glass
+        color: {r: 0.48279637, g: 3.1233306, b: 4.094114, a: 0}
+        range: 0
+      - tagName: Grass
+        color: {r: 0.47409475, g: 3.4716983, b: 0.40939832, a: 0}
+        range: 0
+      - tagName: Red
+        color: {r: 2.264151, g: 0.032039814, b: 0.032039814, a: 0}
+        range: 0
+  vfx: {fileID: 8926484042661614526, guid: 75cb81b14f51d2b49a07bbd3e661aa42, type: 3}
