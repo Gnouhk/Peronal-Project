@@ -21,10 +21,10 @@ public class Player : MonoBehaviour
     [SerializeField] Vector3 moveDampVelocity;
     [SerializeField] Vector3 currentForceVelocity;
 
-    [Header("Sentivity")]
-    [SerializeField] 
-    [Range(0f, 100f)] // Adjust the range of player sentivity.
-    float playerSensitivity = 100f;
+    [Header("Player Camera")]
+    [SerializeField] Transform playerCamera;
+    [SerializeField] Vector2 playerSensitivity;
+    private Vector2 xyRotation;
 
     Vector2 inputDir;
     Vector2 camAxis;
@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         PlayerMovement();
+        PlayerLook();
     }
 
     private void PlayerMovement()
@@ -92,5 +93,22 @@ public class Player : MonoBehaviour
         }
 
         controller.Move(currentForceVelocity * Time.deltaTime);
+    }
+
+    private void PlayerLook() 
+    {
+        Vector2 MouseInput = new Vector2 
+        {
+            x = Input.GetAxis("Mouse X"),
+            y = Input.GetAxis("Mouse Y")
+        };
+
+        xyRotation.x -= MouseInput.y * playerSensitivity.y;
+        xyRotation.y += MouseInput.x * playerSensitivity.x;
+
+        xyRotation.x = Mathf.Clamp(xyRotation.x, -90f, 90f);
+
+        transform.eulerAngles = new Vector3(0f, xyRotation.y, 0f);
+        playerCamera.localEulerAngles = new Vector3(xyRotation.x, 0f, 0f);
     }
 }

@@ -1199,7 +1199,8 @@ MonoBehaviour:
   currentMoveVelocity: {x: 0, y: 0, z: 0}
   moveDampVelocity: {x: 0, y: 0, z: 0}
   currentForceVelocity: {x: 0, y: 0, z: 0}
-  playerSensitivity: 100
+  playerCamera: {fileID: 312901825}
+  playerSensitivity: {x: 4, y: 4}
 --- !u!143 &2108242939
 CharacterController:
   m_ObjectHideFlags: 0
