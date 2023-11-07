@@ -20,11 +20,11 @@ namespace LidarProject
         [Header("Reference")]
         [SerializeField] VisualEffect VFX;
 
-        ScanManager manager;
+        ScanManagerLIDAR manager;
 
         private void Start()
         {
-            manager = FindObjectOfType<ScanManager>();
+            manager = FindObjectOfType<ScanManagerLIDAR>();
         }
         
         void Update()

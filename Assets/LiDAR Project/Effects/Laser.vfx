@@ -1254,7 +1254,7 @@ MonoBehaviour:
       inputSlot: {fileID: 8926484042661614619}
     - outputSlot: {fileID: 8926484042661614628}
       inputSlot: {fileID: 8926484042661614643}
-    position: {x: 791, y: 599}
+    position: {x: 723, y: 646}
     expandedSlots: []
     expanded: 1
 --- !u!114 &8926484042661614624
@@ -1855,7 +1855,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 178, y: 473}
+  m_UIPosition: {x: 184, y: 467}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:

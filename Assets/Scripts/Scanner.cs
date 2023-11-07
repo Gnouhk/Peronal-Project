@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -18,7 +17,7 @@ public class Scanner : MonoBehaviour
 	[SerializeField] ScannerConfig sweepConfig;
 
 	[Header("Sound Config")] 
-	[SerializeField] float scanVolumn;
+	[SerializeField] float scanVolume;
 
 	[Header("Reference")]
 	[SerializeField] Transform start;
@@ -49,24 +48,20 @@ public class Scanner : MonoBehaviour
 		input = GetComponent<PlayerInput>();
 		manager = GetComponent<ScanManager>();
 		targetRadius = baseConfig.radius;
-		player = GetComponent<Player>();	
+		player = GetComponent<Player>();
 		CreateNewVFX();
     }
 
-    private void Update()
-    {
+	private void Update()
+	{
 		ScannerController();
 
 		if (isSweeping)
 			HandleSweeping();
 
-		if(targetRadius != baseConfig.radius)
-			baseConfig.radius = Mathf.Lerp
-			(
-			baseConfig.radius, targetRadius, 
-			baseConfig.scrollConfig.radiusPower
-			);
-    }
+		if (targetRadius != baseConfig.radius)
+			baseConfig.radius = Mathf.Lerp(baseConfig.radius, targetRadius, baseConfig.scrollConfig.radiusPower);
+	}
 
     private void LateUpdate()
     {
@@ -79,24 +74,25 @@ public class Scanner : MonoBehaviour
 		//Left click scan
 		if(Input.actions["Scan"].ReadValue<float>() > 0 && !isSweeping)
         {
-			if (!audioSource.isPlaying)
-				StartCoroutine(manager.PlaySound(audioSource, scanVolumn));
+			ScanCircle();
+			/*if (!audioSource.isPlaying)
+				StartCoroutine(manager.PlaySound(audioSource, scanVolume));*/
         }
 
 		//Right click scan
 		else if(Input.actions["ScanLine"].ReadValue<float>() > 0 && !isSweeping)
         {
 			ScanLine();
-			if (!audioSource.isPlaying)
-				StartCoroutine(manager.PlaySound(audioSource, scanVolumn));
+			/*if (!audioSource.isPlaying)
+				StartCoroutine(manager.PlaySound(audioSource, scanVolume));*/
         }
-		else if (audioSource.isPlaying && !isSweeping)
-				StartCoroutine(manager.StopSound(audioSource));
+		/*else if (audioSource.isPlaying && !isSweeping)
+				StartCoroutine(manager.StopSound(audioSource));*/
 
 		//Sweep scan
 		if(Input.actions["Sweep"].triggered && !isSweeping)
         {
-			player.enabled = false;
+			//player.enabled = false;
 			isSweeping = true;
 			sweepHeight = 1f;
         }
@@ -200,7 +196,6 @@ public class Scanner : MonoBehaviour
     #endregion
 
 
-    
     private void HandleSweeping()
     {
 		sweepHeight -= sweepConfig.lineConfig.sweepSpeed * Time.deltaTime;
@@ -208,8 +203,8 @@ public class Scanner : MonoBehaviour
 		
 		if(sweepHeight <= 0)
 			isSweeping = false;
-		if (!audioSource.isPlaying)
-			StartCoroutine(manager.PlaySound(audioSource, scanVolumn));
+		/*if (!audioSource.isPlaying)
+			StartCoroutine(manager.PlaySound(audioSource, scanVolume));*/
     }
 
 	//Send the scan to ScanManager

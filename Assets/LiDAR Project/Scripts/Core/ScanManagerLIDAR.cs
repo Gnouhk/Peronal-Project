@@ -6,7 +6,7 @@ using UnityEngine.VFX;
 
 namespace LidarProject
 {
-    public class ScanManager : MonoBehaviour
+    public class ScanManagerLIDAR : MonoBehaviour
     {
         [Header("Global")]
         [SerializeField] Texture2D particlesTexture;                    // The texture of the particle

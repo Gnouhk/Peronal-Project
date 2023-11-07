@@ -53,6 +53,9 @@ VisualEffect:
       - m_Value: 0.05
         m_Name: LifeTime
         m_Overridden: 1
+      - m_Value: 0.05
+        m_Name: Life Time
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -61,6 +64,9 @@ VisualEffect:
       m_Array:
       - m_Value: {x: 1, y: 0, z: 0, w: 1}
         m_Name: Color
+        m_Overridden: 1
+      - m_Value: {x: 0.4528302, y: 0.0064079626, z: 0.0064079626, w: 0.85882354}
+        m_Name: Laser Color
         m_Overridden: 1
     m_Uint:
       m_Array: []

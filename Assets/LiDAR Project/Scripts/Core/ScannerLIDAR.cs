@@ -5,7 +5,7 @@ using UnityEngine.VFX;
 
 namespace LidarProject
 {
-    public class Scanner : MonoBehaviour
+    public class ScannerLIDAR : MonoBehaviour
     {
         [Header("Scan Config")]
         [SerializeField] ScannerConfig scannerBaseConfig;   // Base Scanner Config
@@ -21,7 +21,7 @@ namespace LidarProject
 
         public PlayerInput Input { get => input; set => input = value; }
 
-        ScanManager manager;
+        ScanManagerLIDAR manager;
         Camera cam;
         AudioSource audioSource;
         PlayerInput input;
@@ -39,7 +39,7 @@ namespace LidarProject
             cam = Camera.main;
             audioSource = GetComponent<AudioSource>();
             input = GetComponent<PlayerInput>();
-            manager = FindObjectOfType<ScanManager>();
+            manager = FindObjectOfType<ScanManagerLIDAR>();
             targetRadius = scannerBaseConfig.radius;
             CreateNewVFX();
         }
