@@ -80,7 +80,7 @@ namespace Lidar
             }
             else if (audioSource.isPlaying && !inSweeping)
                 StartCoroutine(manager.StopSound(audioSource));
-
+            
             // Scan Sweep
             if (Input.actions["Sweep"].triggered && !inSweeping)
             {
