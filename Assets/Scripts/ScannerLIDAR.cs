@@ -26,6 +26,7 @@ namespace Lidar
         AudioSource audioSource;
         PlayerInput input;
         Player player;
+        Scanned_Jumpscare scanned;
         bool inSweeping;
         float sweepHeight, targetRadius;
 
@@ -43,6 +44,7 @@ namespace Lidar
             manager = FindObjectOfType<ScanManagerLIDAR>();
             targetRadius = scannerBaseConfig.radius;
             player = GetComponent<Player>();
+            scanned = GetComponent<Scanned_Jumpscare>();
             CreateNewVFX();
         }
 
@@ -129,8 +131,12 @@ namespace Lidar
                 else
                     randomPoint = (Random.insideUnitSphere.normalized * scannerBaseConfig.radius * 9.5f) + (-cam.transform.forward * 10) + cam.transform.position;
                 Vector3 dir = (cam.transform.position - randomPoint).normalized;
+
                 if (Physics.Raycast(cam.transform.position, dir, out _hit, scannerBaseConfig.range - (scannerBaseConfig.radius * scannerBaseConfig.rangeMultiplier)))
+                {
                     SetScan(_hit);
+                    //scanned.Scanned(_hit);
+                }
                 else if (scannerBaseConfig.laserAwlaysVisible)
                     AddList(cam.transform.position + dir * (scannerBaseConfig.range - (scannerBaseConfig.radius * scannerBaseConfig.rangeMultiplier)));
             }
@@ -146,8 +152,11 @@ namespace Lidar
                 RaycastHit _hit;
                 Vector3 randomPoint = new Vector3(Random.Range(_pos - (scannerLineConfig.lineConfig.lineWidth * _pos), _pos + (scannerLineConfig.lineConfig.lineWidth * _pos)), (cam.pixelHeight / 2f) + _random, 0);
                 Ray ray = cam.ScreenPointToRay(randomPoint);
+
                 if (Physics.Raycast(cam.transform.position, ray.direction, out _hit, scannerLineConfig.range))
-                    SetScan(_hit);
+                { 
+                   SetScan(_hit);
+                }    
                 else if (scannerLineConfig.laserAwlaysVisible)
                     AddList(cam.transform.position + ray.direction * scannerLineConfig.range);
             }
@@ -163,8 +172,11 @@ namespace Lidar
                 RaycastHit _hit;
                 Vector3 randomPoint = new Vector3(Random.Range(_pos - (scannerSweepConfig.lineConfig.lineWidth * _pos), _pos + (scannerSweepConfig.lineConfig.lineWidth * _pos)), (cam.pixelHeight * sweepHeight) + _random, 0);
                 Ray ray = cam.ScreenPointToRay(randomPoint);
+
                 if (Physics.Raycast(cam.transform.position, ray.direction, out _hit, scannerSweepConfig.range))
+                {
                     SetScan(_hit);
+                }
                 else if (scannerSweepConfig.laserAwlaysVisible)
                     AddList(cam.transform.position + ray.direction * scannerSweepConfig.range);
             }
@@ -207,6 +219,7 @@ namespace Lidar
         {
             if (targetList.Count <= 0)
                 return;
+
             manager.EnsureBufferCapacity(ref positionBuffer, targetList.Count, 12, laserVFX, VfxPositionBufferProperty);
             positionBuffer.SetData(targetList);
             laserVFX.SetFloat("LifeTime", 0.05f);

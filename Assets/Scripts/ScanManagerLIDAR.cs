@@ -170,6 +170,7 @@ namespace Lidar
 
         void CreateNewVFX() // Create the vfx and assign the current vfx
         {
+            Debug.Log("Creating new Particle Effect.");
             ReleaseBuffer(ref positionBuffer);
             ReleaseBuffer(ref normalBuffer);
             ReleaseBuffer(ref colorBuffer);
