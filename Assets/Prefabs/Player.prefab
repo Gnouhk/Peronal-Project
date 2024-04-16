@@ -386,6 +386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8484302310459126689}
   - component: {fileID: 8484302310459126690}
+  - component: {fileID: 7579226341450722989}
   - component: {fileID: 8541168175783252653}
   - component: {fileID: 5128177198202337464}
   - component: {fileID: 511796888620776987}
@@ -433,6 +434,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7579226341450722989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8484302310459126703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef70e09ed0d6864799f37e4c173aa7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpscareSceneName: JumpscareScene_(WindowError)
 --- !u!114 &8541168175783252653
 MonoBehaviour:
   m_ObjectHideFlags: 0

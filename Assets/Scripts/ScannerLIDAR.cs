@@ -201,6 +201,7 @@ namespace Lidar
         {
             manager.AddParticle(_hit);
             AddList(_hit.point);
+            scanned.Scanned(_hit);
         }
 
         void AddList(Vector3 _pos) // Add target to the list
