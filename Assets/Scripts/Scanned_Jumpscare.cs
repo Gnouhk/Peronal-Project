@@ -22,7 +22,7 @@ namespace Lidar
             if (_hit.transform.tag == "Red")
             {
                 ErrorSceneManager.TriggerJumpscare();
-                Destroy(_hit.collider.gameObject, 2f);
+                Destroy(_hit.collider.gameObject, 8f);
                 hasBeenScanned = true;
             }
         }
