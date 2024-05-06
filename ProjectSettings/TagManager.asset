@@ -9,6 +9,14 @@ TagManager:
   - Grass
   - Red
   - Metal
+  - Tree
+  - Vehicles
+  - Houses
+  - Furniture
+  - Tire
+  - Clothes
+  - Mushroom Light Blue
+  - Mushroom Neon Purple
   layers:
   - Default
   - TransparentFX
