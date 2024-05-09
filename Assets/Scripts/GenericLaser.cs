@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.VFX;
 
-namespace Lidar
+namespace LidarProject
 {
     public class GenericLaser : MonoBehaviour
     {
@@ -20,11 +20,11 @@ namespace Lidar
         [Header("Reference")]
         [SerializeField] VisualEffect VFX;
 
-        ScanManagerLIDAR manager;
+        ScanManager manager;
 
         private void Start()
         {
-            manager = FindObjectOfType<ScanManagerLIDAR>();
+            manager = FindObjectOfType<ScanManager>();
         }
         
         void Update()
