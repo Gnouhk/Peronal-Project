@@ -5,18 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Global
-  - Glass
   - Grass
-  - Red
-  - Metal
   - Tree
-  - Vehicles
-  - Houses
-  - Furniture
-  - Tire
-  - Clothes
   - Mushroom Light Blue
   - Mushroom Neon Purple
+  - Mushroom
   layers:
   - Default
   - TransparentFX
